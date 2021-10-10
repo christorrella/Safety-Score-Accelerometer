@@ -1,6 +1,6 @@
 # Safety Score Accelerometer
 
-Wanna know how quickly you're decelerating in the coolest car made in America? Look no further than Safety Score Accelerometer! This simple app plays a tone and displays a color based on the accelerometer data on your iPhone. You can even change the tone frequencies and specify custom deceleration values.
+Wonder how quickly you're decelerating in the coolest car made in America? Look no further than Safety Score Accelerometer! This simple app plays a tone and displays a color based on the accelerometer data on your iPhone. You can even change the tone frequencies and specify custom deceleration values.
 
  - Reads your phone's accelerometer data 
  - Plays a tone based on your settings
