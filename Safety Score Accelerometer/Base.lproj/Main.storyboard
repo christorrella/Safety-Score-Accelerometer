@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5QH-mh-Vfz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TRR-Kt-YHt">
+            <objects>
+                <tabBarController id="5QH-mh-Vfz" customClass="TabBarController" customModule="Safety_Score_Accelerometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K6g-6C-vpY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cYO-vC-u74" kind="relationship" relationship="viewControllers" id="tld-jA-W4N"/>
+                        <segue destination="zwe-vs-FA9" kind="relationship" relationship="viewControllers" id="osV-ec-N3g"/>
+                        <segue destination="u7G-rC-hnC" kind="relationship" relationship="viewControllers" id="V08-xq-e9n"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nNl-Eo-SuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-533" y="50"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="g5j-cW-wzx">
+            <objects>
+                <viewController id="u7G-rC-hnC" customClass="SettingsViewController" customModule="Safety_Score_Accelerometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XfD-rh-GA1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upper Bound, Accel.: 0.3 g" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5q-xZ-szy">
+                                <rect key="frame" x="10" y="74" width="394" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyg-tf-5FI">
+                                <rect key="frame" x="10" y="286" width="394" height="527"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">The default acceleration boundary values probably shouldn't be changed unless the Safety Score foruma changed.
+
+When this device experiences deceleration less than the lower deceleration boundary, the screen will remain uncolored and no sound will be played.
+
+During deceleration between the lower and upper deceleration boundaries, the display will turn Green and the lower boundary tone will play. This is considered "soft" braking.
+
+During deceleration greater than the upper deceleration boundary, the screen will turn Red and the upper boundary tone will play. This is considered "hard" braking.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="khO-Xm-NxD">
+                                <rect key="frame" x="8" y="97" width="398" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upper Bound, Tone: 420 Hz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wf-7o-vt6">
+                                <rect key="frame" x="10" y="127" width="394" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BjV-jd-eUr">
+                                <rect key="frame" x="8" y="150" width="398" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lower Bound, Accel.: 0.1 g" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-Bz-cZd">
+                                <rect key="frame" x="10" y="180" width="394" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xGL-FW-5gN">
+                                <rect key="frame" x="8" y="203" width="398" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lower Bound, Tone: 69 Hz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STG-kJ-KNh">
+                                <rect key="frame" x="10" y="233" width="394" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="baj-Rl-lcr">
+                                <rect key="frame" x="8" y="256" width="398" height="31"/>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="z4q-4J-uKS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="baj-Rl-lcr" secondAttribute="trailing" constant="10" id="12G-BX-u9d"/>
+                            <constraint firstItem="C5q-xZ-szy" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="4CJ-IZ-JlK"/>
+                            <constraint firstItem="STG-kJ-KNh" firstAttribute="top" secondItem="xGL-FW-5gN" secondAttribute="bottom" id="4ha-iQ-Y4R"/>
+                            <constraint firstItem="baj-Rl-lcr" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="5JC-aZ-vfX"/>
+                            <constraint firstItem="khO-Xm-NxD" firstAttribute="top" secondItem="C5q-xZ-szy" secondAttribute="bottom" id="5kN-ap-lfB"/>
+                            <constraint firstItem="C5q-xZ-szy" firstAttribute="top" secondItem="z4q-4J-uKS" secondAttribute="top" constant="30" id="6BY-jH-kBZ"/>
+                            <constraint firstItem="z4q-4J-uKS" firstAttribute="bottom" secondItem="Vyg-tf-5FI" secondAttribute="bottom" id="8wS-Qd-nCy"/>
+                            <constraint firstItem="STG-kJ-KNh" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="9gg-ZK-gct"/>
+                            <constraint firstItem="BjV-jd-eUr" firstAttribute="top" secondItem="6Wf-7o-vt6" secondAttribute="bottom" id="BXv-J3-9Ko"/>
+                            <constraint firstItem="Vyg-tf-5FI" firstAttribute="top" secondItem="baj-Rl-lcr" secondAttribute="bottom" id="Dml-es-jcr"/>
+                            <constraint firstItem="v2I-Bz-cZd" firstAttribute="top" secondItem="BjV-jd-eUr" secondAttribute="bottom" id="EYn-Bj-qol"/>
+                            <constraint firstAttribute="trailing" secondItem="BjV-jd-eUr" secondAttribute="trailing" constant="10" id="FBb-QU-Evn"/>
+                            <constraint firstAttribute="trailing" secondItem="khO-Xm-NxD" secondAttribute="trailing" constant="10" id="FZm-1g-8RL"/>
+                            <constraint firstItem="z4q-4J-uKS" firstAttribute="trailing" secondItem="v2I-Bz-cZd" secondAttribute="trailing" constant="10" id="Fud-Au-Oto"/>
+                            <constraint firstItem="khO-Xm-NxD" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="Iag-wU-9nY"/>
+                            <constraint firstAttribute="trailing" secondItem="xGL-FW-5gN" secondAttribute="trailing" constant="10" id="J0K-jb-qlK"/>
+                            <constraint firstItem="6Wf-7o-vt6" firstAttribute="top" secondItem="khO-Xm-NxD" secondAttribute="bottom" id="LGN-nw-7Cv"/>
+                            <constraint firstItem="Vyg-tf-5FI" firstAttribute="top" secondItem="baj-Rl-lcr" secondAttribute="bottom" id="N8U-Xa-cb3"/>
+                            <constraint firstItem="z4q-4J-uKS" firstAttribute="trailing" secondItem="C5q-xZ-szy" secondAttribute="trailing" constant="10" id="O9d-2s-wUR"/>
+                            <constraint firstItem="6Wf-7o-vt6" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="PV5-Vt-g1v"/>
+                            <constraint firstItem="STG-kJ-KNh" firstAttribute="top" secondItem="xGL-FW-5gN" secondAttribute="bottom" id="Qyn-mj-mWi"/>
+                            <constraint firstItem="xGL-FW-5gN" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="TBH-Sh-8HY"/>
+                            <constraint firstItem="v2I-Bz-cZd" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="WFN-t5-VIR"/>
+                            <constraint firstItem="BjV-jd-eUr" firstAttribute="top" secondItem="6Wf-7o-vt6" secondAttribute="bottom" id="cST-mu-62h"/>
+                            <constraint firstItem="Vyg-tf-5FI" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="cTJ-lR-asl"/>
+                            <constraint firstAttribute="trailing" secondItem="Vyg-tf-5FI" secondAttribute="trailing" constant="10" id="cd0-cm-2Uo"/>
+                            <constraint firstItem="xGL-FW-5gN" firstAttribute="top" secondItem="v2I-Bz-cZd" secondAttribute="bottom" id="dn6-im-ImV"/>
+                            <constraint firstItem="baj-Rl-lcr" firstAttribute="top" secondItem="STG-kJ-KNh" secondAttribute="bottom" id="eJW-xR-XQO"/>
+                            <constraint firstItem="z4q-4J-uKS" firstAttribute="trailing" secondItem="STG-kJ-KNh" secondAttribute="trailing" constant="10" id="fOM-Da-Thf"/>
+                            <constraint firstItem="xGL-FW-5gN" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="fSY-or-2S3"/>
+                            <constraint firstItem="xGL-FW-5gN" firstAttribute="top" secondItem="v2I-Bz-cZd" secondAttribute="bottom" id="ggQ-e1-6Pf"/>
+                            <constraint firstItem="z4q-4J-uKS" firstAttribute="trailing" secondItem="6Wf-7o-vt6" secondAttribute="trailing" constant="10" id="gwV-hs-FZO"/>
+                            <constraint firstItem="khO-Xm-NxD" firstAttribute="top" secondItem="C5q-xZ-szy" secondAttribute="bottom" id="i4a-fj-Lt2"/>
+                            <constraint firstItem="BjV-jd-eUr" firstAttribute="leading" secondItem="z4q-4J-uKS" secondAttribute="leading" constant="10" id="imE-77-pFk"/>
+                            <constraint firstItem="6Wf-7o-vt6" firstAttribute="top" secondItem="khO-Xm-NxD" secondAttribute="bottom" id="rKs-2o-hNf"/>
+                            <constraint firstItem="v2I-Bz-cZd" firstAttribute="top" secondItem="BjV-jd-eUr" secondAttribute="bottom" id="z3Y-cU-JhZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="pencil" catalog="system" id="7qh-a3-V0Y"/>
+                    <connections>
+                        <outlet property="LowerAccelBoundaryLabel" destination="v2I-Bz-cZd" id="VN7-Cx-IMq"/>
+                        <outlet property="LowerAccelBoundarySlider" destination="xGL-FW-5gN" id="scd-yz-3Hh"/>
+                        <outlet property="LowerBoundaryToneLabel" destination="STG-kJ-KNh" id="MwI-pz-fVA"/>
+                        <outlet property="LowerBoundaryToneSlider" destination="baj-Rl-lcr" id="T05-vS-VER"/>
+                        <outlet property="UpperAccelBoundaryLabel" destination="C5q-xZ-szy" id="qAQ-aH-rwB"/>
+                        <outlet property="UpperAccelBoundarySlider" destination="khO-Xm-NxD" id="XjN-A0-Bnj"/>
+                        <outlet property="UpperBoundaryToneLabel" destination="6Wf-7o-vt6" id="FhO-Dv-wEN"/>
+                        <outlet property="UpperBoundaryToneSlider" destination="BjV-jd-eUr" id="GKy-Ko-TZW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ds-ga-3PC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="790.84821428571422"/>
+        </scene>
+        <!--Accelerometer-->
+        <scene sceneID="xYX-mn-l0C">
+            <objects>
+                <viewController id="zwe-vs-FA9" customClass="AccelerometerViewController" customModule="Safety_Score_Accelerometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XQa-Vh-3zD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y-Acceleration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tih-pG-EDy">
+                                <rect key="frame" x="0.0" y="386" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0.00 g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccv-Gd-tTV">
+                                <rect key="frame" x="59" y="407" width="296" height="82"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZwU-Bb-d5Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ccv-Gd-tTV" firstAttribute="top" secondItem="Tih-pG-EDy" secondAttribute="bottom" id="102-K8-j77"/>
+                            <constraint firstItem="ZwU-Bb-d5Z" firstAttribute="trailing" secondItem="Tih-pG-EDy" secondAttribute="trailing" id="AiN-NN-ksT"/>
+                            <constraint firstItem="Tih-pG-EDy" firstAttribute="leading" secondItem="ZwU-Bb-d5Z" secondAttribute="leading" id="HA8-mi-VlY"/>
+                            <constraint firstItem="Ccv-Gd-tTV" firstAttribute="centerX" secondItem="XQa-Vh-3zD" secondAttribute="centerX" id="LIg-rz-y1c"/>
+                            <constraint firstItem="Ccv-Gd-tTV" firstAttribute="centerY" secondItem="XQa-Vh-3zD" secondAttribute="centerY" id="g0K-KQ-Zmo"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Accelerometer" image="car.fill" catalog="system" id="LFj-mz-1PE"/>
+                    <connections>
+                        <outlet property="yAccelBackground" destination="XQa-Vh-3zD" id="gev-z2-Ula"/>
+                        <outlet property="yAccelLabel" destination="Ccv-Gd-tTV" id="f26-9L-i5C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHJ-nH-tlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-533" y="791"/>
+        </scene>
+        <!--Information-->
+        <scene sceneID="YTM-YR-Xse">
+            <objects>
+                <viewController id="cYO-vC-u74" customClass="InformationViewController" customModule="Safety_Score_Accelerometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TAd-lq-7hg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="921"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNI-gv-j8N">
+                                <rect key="frame" x="0.0" y="44" width="414" height="794"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RK-FY-Pqi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="911.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3e-P9-ncG">
+                                        <rect key="frame" x="172.5" y="113" width="69" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="AKL-xe-6f3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m61-4H-zKF">
+                                        <rect key="frame" x="182" y="503.5" width="50" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Igp-lB-liC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkL-MM-fDq" userLabel="About Text View">
+                                        <rect key="frame" x="10" y="40" width="394" height="73.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">This app is designed to help you reduce the number of hard braking events that are triggered by your car's IMU on the car computer.  </string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wP-dE-X7D">
+                                        <rect key="frame" x="10" y="143" width="394" height="360"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">The Accelerometer tab shows the current accelerometer data from this iOS device. When decelerating in your vehicle, this device will play a tone and display a color based on the settings set in the Settings tab below.
+
+Note that this device must be placed flat on the center console with the screen facing the sky and the charging port facing the trunk. Disable your ringer silencer switch on the side of your iPhone to hear the tones.
+
+Orientation is important to reduce acceleration error. For best results, park your vehicle on a completely level surface, and then affix your phone to your vehicle in the same orientation described above, also completely flat and level with respect to the level ground.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zju-mg-f0L">
+                                        <rect key="frame" x="174" y="10" width="66" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPh-Hg-WTO">
+                                        <rect key="frame" x="10" y="533.5" width="394" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">The second highest weighted factor behind Forced Autopilot Disengagement in the Predicted Collision Frequency is Hard Braking. I saw a good amount of people online concerned with knowing how quickly they were decelerating, so I decided to whip this up real quick to show how quickly you're actually decelerating. </string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="F3e-P9-ncG" firstAttribute="top" secondItem="NkL-MM-fDq" secondAttribute="bottom" constant="-0.5" id="6N1-08-kD7"/>
+                                    <constraint firstItem="6RK-FY-Pqi" firstAttribute="leading" secondItem="DNI-gv-j8N" secondAttribute="leading" id="7lF-wd-FUS"/>
+                                    <constraint firstItem="6RK-FY-Pqi" firstAttribute="top" secondItem="zju-mg-f0L" secondAttribute="bottom" constant="-40" id="8we-DH-xL5"/>
+                                    <constraint firstItem="F3e-P9-ncG" firstAttribute="centerX" secondItem="6RK-FY-Pqi" secondAttribute="centerX" id="9X0-7s-k4h"/>
+                                    <constraint firstAttribute="trailing" secondItem="6RK-FY-Pqi" secondAttribute="trailing" id="Am2-NV-zQj"/>
+                                    <constraint firstItem="9wP-dE-X7D" firstAttribute="top" secondItem="F3e-P9-ncG" secondAttribute="bottom" id="HS6-lS-SKE"/>
+                                    <constraint firstItem="NkL-MM-fDq" firstAttribute="top" secondItem="zju-mg-f0L" secondAttribute="bottom" id="NU0-KR-QM7"/>
+                                    <constraint firstItem="6RK-FY-Pqi" firstAttribute="top" secondItem="DNI-gv-j8N" secondAttribute="top" id="PO3-Qu-Q6w"/>
+                                    <constraint firstItem="NkL-MM-fDq" firstAttribute="width" secondItem="6RK-FY-Pqi" secondAttribute="width" multiplier="0.951691" id="Rul-yB-tiB"/>
+                                    <constraint firstItem="TPh-Hg-WTO" firstAttribute="top" secondItem="6RK-FY-Pqi" secondAttribute="bottom" constant="-378" id="Tmq-fY-zQd"/>
+                                    <constraint firstItem="TPh-Hg-WTO" firstAttribute="centerX" secondItem="6RK-FY-Pqi" secondAttribute="centerX" id="Wjd-4f-YMh"/>
+                                    <constraint firstItem="TPh-Hg-WTO" firstAttribute="top" secondItem="m61-4H-zKF" secondAttribute="bottom" id="XNP-mq-o2R"/>
+                                    <constraint firstItem="NkL-MM-fDq" firstAttribute="centerX" secondItem="6RK-FY-Pqi" secondAttribute="centerX" id="aZV-z6-Qey"/>
+                                    <constraint firstItem="m61-4H-zKF" firstAttribute="centerX" secondItem="6RK-FY-Pqi" secondAttribute="centerX" id="gRh-3Y-NdK"/>
+                                    <constraint firstItem="9wP-dE-X7D" firstAttribute="centerX" secondItem="6RK-FY-Pqi" secondAttribute="centerX" id="gux-iP-xBF"/>
+                                    <constraint firstItem="6RK-FY-Pqi" firstAttribute="width" secondItem="DNI-gv-j8N" secondAttribute="width" id="hff-Fp-ZO7"/>
+                                    <constraint firstItem="m61-4H-zKF" firstAttribute="top" secondItem="9wP-dE-X7D" secondAttribute="bottom" constant="0.5" id="hgB-6e-RLj"/>
+                                    <constraint firstAttribute="bottom" secondItem="6RK-FY-Pqi" secondAttribute="bottom" id="nYJ-5f-8Ov"/>
+                                    <constraint firstItem="9wP-dE-X7D" firstAttribute="width" secondItem="6RK-FY-Pqi" secondAttribute="width" multiplier="0.951691" id="o5O-c3-GKB"/>
+                                    <constraint firstItem="zju-mg-f0L" firstAttribute="centerX" secondItem="6RK-FY-Pqi" secondAttribute="centerX" id="qgZ-Xj-5Bx"/>
+                                    <constraint firstItem="TPh-Hg-WTO" firstAttribute="width" secondItem="6RK-FY-Pqi" secondAttribute="width" multiplier="0.951691" id="xqL-RW-x3x"/>
+                                    <constraint firstItem="6RK-FY-Pqi" firstAttribute="height" secondItem="DNI-gv-j8N" secondAttribute="height" priority="250" id="yOT-oC-hh7"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TrZ-td-1GU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DNI-gv-j8N" firstAttribute="bottom" secondItem="TrZ-td-1GU" secondAttribute="bottom" id="CA6-wK-dnQ"/>
+                            <constraint firstItem="DNI-gv-j8N" firstAttribute="leading" secondItem="TrZ-td-1GU" secondAttribute="leading" id="Lwe-g0-hWl"/>
+                            <constraint firstItem="DNI-gv-j8N" firstAttribute="top" secondItem="TrZ-td-1GU" secondAttribute="top" id="ccT-kn-OFx"/>
+                            <constraint firstItem="TrZ-td-1GU" firstAttribute="trailing" secondItem="DNI-gv-j8N" secondAttribute="trailing" id="n9z-Yi-bTR"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Information" image="info.circle" catalog="system" id="lsQ-aJ-v1G"/>
+                    <size key="freeformSize" width="414" height="921"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQ9-x1-Nie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1259.4202898550725" y="790.84821428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="car.fill" catalog="system" width="128" height="93"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
